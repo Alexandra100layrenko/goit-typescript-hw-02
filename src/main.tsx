@@ -9,7 +9,7 @@ createRoot(document.getElementById('app') as HTMLElement).render(
   <StrictMode>
     <App />
     <Toaster
-      position='top-center'
+      position="top-center"
       reverseOrder={false}
       toastOptions={{
         className: '',
@@ -20,9 +20,16 @@ createRoot(document.getElementById('app') as HTMLElement).render(
         },
         success: {
           duration: 1000,
-          theme: {
-            primary: 'green',
-            secondary: 'black',
+          style: {
+            backgroundColor: 'green',
+            color: 'white',
+          },
+        },
+        error: {
+          duration: 1000,
+          style: {
+            backgroundColor: 'red',
+            color: 'white',
           },
         },
       }}
