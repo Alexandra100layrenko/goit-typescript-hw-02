@@ -9,13 +9,14 @@ import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import ImageModal from '../ImageModal/ImageModal';
 
-type Image = {
+export type Image = {
   id: string;
   urls: { small: string; regular: string };
   alt_description: string | null;
   description: string | null;
   user: { name: string };
   likes: number;
+  onImageClick: (image: Image) => void;
 };
 
 const App: React.FC = () => {
@@ -30,8 +31,6 @@ const App: React.FC = () => {
   const API_KEY = 'JyNgZqGkyp-nusF9kEkLmb9tATZhW2CiODfKDVoF8Og';
   const API_URL = 'https://api.unsplash.com/search/photos';
 
-  
-
   const fetchImages = async (query: string, page: number) => {
     const response = await axios.get<{ results: Image[]; total_pages: number }>(API_URL, {
       params: { query, page, per_page: 12 },
@@ -39,7 +38,6 @@ const App: React.FC = () => {
     });
     return response.data;
   };
-  
 
   useEffect(() => {
     if (!query.trim()) return;

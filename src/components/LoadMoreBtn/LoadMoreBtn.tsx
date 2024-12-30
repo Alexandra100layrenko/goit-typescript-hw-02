@@ -1,6 +1,6 @@
 import s from './LoadMoreBtn.module.css';
 
-type LoadMoreBtnProps = {
+export type LoadMoreBtnProps = {
   onClick: () => void;
 };
 

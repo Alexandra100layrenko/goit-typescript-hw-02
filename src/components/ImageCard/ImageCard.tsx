@@ -1,11 +1,7 @@
 import s from './ImageCard.module.css';
+import { Image } from '../App/App';
 
-type Image = {
-  urls: { small: string };
-  alt_description: string | null;
-};
-
-type ImageCardProps = {
+export type ImageCardProps = {
   image: Image;
   onClick: (image: Image) => void;
 };

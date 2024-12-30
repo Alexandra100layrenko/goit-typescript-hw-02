@@ -1,7 +1,7 @@
 import ReactModal from 'react-modal';
 import s from './ImageModal.module.css';
 
-type Image = {
+export type Image = {
   urls: { regular: string };
   alt_description: string | null;
   description: string | null;
@@ -9,7 +9,7 @@ type Image = {
   likes: number;
 };
 
-type ImageModalProps = {
+export type ImageModalProps = {
   isOpen: boolean;
   image: Image;
   onClose: () => void;

@@ -1,13 +1,9 @@
 import s from './ImageGallery.module.css';
 import ImageCard from '../ImageCard/ImageCard';
+import { Image } from '../App/App';
 
-type Image = {
-  id: string;
-  urls: { small: string };
-  alt_description: string | null;
-};
 
-type ImageGalleryProps = {
+export type ImageGalleryProps = {
   images: Image[];
   onImageClick: (image: Image) => void;
 };
