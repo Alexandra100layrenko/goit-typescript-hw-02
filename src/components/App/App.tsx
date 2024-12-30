@@ -16,7 +16,6 @@ export type Image = {
   description: string | null;
   user: { name: string };
   likes: number;
-  onImageClick: (image: Image) => void;
 };
 
 const App: React.FC = () => {
